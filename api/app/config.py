@@ -3,7 +3,7 @@ from loguru import logger
 import sys
 
 
-BASE_DIR = pathlib.Path(__file__).parent.parent
+BASE_DIR = pathlib.Path(__file__).parent
 
 
 class Config:

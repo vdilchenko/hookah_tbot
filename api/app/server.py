@@ -23,12 +23,12 @@ async def get_health():
 
 
 @app.get("/brands/{flavor}", response_model=list[BrandResponse])
-async def brands_by_flavor(flavor: str, limit: int = 5):
+async def brands_by_flavor(flavor: str, limit: int = 10):
     return get_top_brands(flavor, limit)
 
 
 @app.get("/flavors/{brand}", response_model=list[FlavorResponse])
-async def flavors_by_brand(brand: str, limit: int = 5):
+async def flavors_by_brand(brand: str, limit: int = 10):
     return get_top_flavors(brand, limit)
 
 

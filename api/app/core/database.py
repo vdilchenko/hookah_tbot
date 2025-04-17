@@ -16,7 +16,7 @@ def load_data():
         raise
 
 
-def get_top_brands(flavor: str, limit: int = 5) -> list[dict]:
+def get_top_brands(flavor: str, limit: int = 10) -> list[dict]:
     """Топ брендов для указанного вкуса."""
     df = load_data()
     return (
@@ -27,7 +27,7 @@ def get_top_brands(flavor: str, limit: int = 5) -> list[dict]:
     )
 
 
-def get_top_flavors(brand: str, limit: int = 5) -> list[dict]:
+def get_top_flavors(brand: str, limit: int = 10) -> list[dict]:
     """Топ вкусов для указанного бренда."""
     df = load_data()
     return (

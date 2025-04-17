@@ -4,17 +4,18 @@ services:
   api:
     build: ./api
     container_name: tobacco_api
-    # hostname: api  # Важно для внутреннего DNS
+    hostname: api  # Важно для внутреннего DNS
     ports:
       - "80:80"
     volumes:
-      - ./api/data:/app/data
+      - ./api/app/data:/app/data
     healthcheck:  # Добавляем healthcheck
       test: ["CMD", "curl", "-f", "http://localhost/health"]
       interval: 10s
       timeout: 5s
       retries: 5
     restart: unless-stopped
+    image: vdilchenko/hookah_tbot_api
  
   bot:
     build: ./bot
@@ -24,6 +25,8 @@ services:
       api:
         condition: service_healthy  # Ждем пока API станет доступен
     restart: unless-stopped
+    network_mode: host
+    image: vdilchenko/hookah_tbot_bot
 
 networks:
   default:
