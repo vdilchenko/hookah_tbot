@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  api:
+    build: ./api
+    container_name: tobacco_api
+    # hostname: api  # Важно для внутреннего DNS
+    ports:
+      - "80:80"
+    volumes:
+      - ./api/data:/app/data
+    healthcheck:  # Добавляем healthcheck
+      test: ["CMD", "curl", "-f", "http://localhost/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+ 
+  bot:
+    build: ./bot
+    container_name: tobacco_bot
+    hostname: bot
+    depends_on:
+      api:
+        condition: service_healthy  # Ждем пока API станет доступен
+    restart: unless-stopped
+
+networks:
+  default:
+    name: tobacco_network
