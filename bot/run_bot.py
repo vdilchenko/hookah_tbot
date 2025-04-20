@@ -1,4 +1,3 @@
-import sys
 from app.bot_launcher import run_bot
 from app.config import Config, setup_logging
 

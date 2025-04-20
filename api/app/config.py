@@ -1,9 +1,12 @@
 import pathlib
+import os
 from loguru import logger
 import sys
+from dotenv import load_dotenv
 
 
-BASE_DIR = pathlib.Path(__file__).parent
+load_dotenv()
+BASE_DIR = pathlib.Path(__file__).parent.parent
 
 
 class Config:
@@ -17,7 +20,7 @@ class Config:
     API_PORT = 80
     
     # Настройки бота
-    BOT_TOKEN = "7342043505:AAGSe2rkYAWNd0G6O5L72YKRMdLPrikQvHM"
+    BOT_TOKEN = os.getenv("BOT_TOKEN")
 
 
 def setup_logging(log_path: str, service_name: str):

@@ -8,12 +8,13 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./api/app/data:/app/data
+      - ./api/data:/api/data
     healthcheck:  # Добавляем healthcheck
       test: ["CMD", "curl", "-f", "http://localhost/health"]
       interval: 10s
       timeout: 5s
       retries: 5
+    env_file: "./api/.env"
     restart: unless-stopped
     image: vdilchenko/hookah_tbot_api
  
@@ -21,6 +22,7 @@ services:
     build: ./bot
     container_name: tobacco_bot
     hostname: bot
+    env_file: "./bot/.env"
     depends_on:
       api:
         condition: service_healthy  # Ждем пока API станет доступен

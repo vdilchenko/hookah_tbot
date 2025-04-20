@@ -1,5 +1,5 @@
 [project]
-name = "api"
+name = "app"
 version = "1.0.0"
 description = "This app is created to suggest users by requests top flavors/brands by brand/flavor of hookah tobacco."
 authors = [
@@ -13,7 +13,8 @@ dependencies = [
     "python-multipart (>=0.0.20,<0.0.21)",
     "aiohttp (>=3.11.16,<4.0.0)",
     "loguru (>=0.7.3,<0.8.0)",
-    "pandas (>=2.2.3,<3.0.0)"
+    "pandas (>=2.2.3,<3.0.0)",
+    "python-dotenv (>=1.1.0,<1.1.1)"
 ]
 
 [build-system]

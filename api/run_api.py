@@ -1,4 +1,3 @@
-import sys
 from app.server import run_api
 from app.config import Config, setup_logging
 
