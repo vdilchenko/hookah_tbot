@@ -1,6 +1,7 @@
 import pathlib
 from loguru import logger
-import sys, os
+import sys
+from pydantic import Field
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -19,7 +20,7 @@ class Config:
     API_PORT = 80
     
     # Настройки бота
-    BOT_TOKEN = os.getenv("BOT_TOKEN")
+    BOT_TOKEN = Field(env="BOT_TOKEN")
 
 
 def setup_logging(log_path: str, service_name: str):
