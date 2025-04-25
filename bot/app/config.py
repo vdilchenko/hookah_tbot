@@ -3,7 +3,6 @@ from loguru import logger
 import sys, os
 from dotenv import load_dotenv
 
-
 load_dotenv()
 
 BASE_DIR = pathlib.Path(__file__).parent.parent

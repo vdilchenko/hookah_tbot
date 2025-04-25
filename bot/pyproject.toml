@@ -1,5 +1,5 @@
 [project]
-name = "bot"
+name = "app"
 version = "1.0.0"
 description = "This app is created to suggest users by requests top flavors/brands by brand/flavor of hookah tobacco."
 authors = [
@@ -23,4 +23,3 @@ build-backend = "poetry.core.masonry.api"
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.5"
 httpx = "^0.28.1"
-

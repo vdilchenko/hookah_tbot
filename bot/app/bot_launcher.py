@@ -1,6 +1,6 @@
 from telegram.ext import Application
-from app.handlers import setup_handlers
-from app.config import Config
+from .handlers import setup_handlers
+from .config import Config
 
 
 def run_bot():

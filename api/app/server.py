@@ -1,9 +1,9 @@
 import uvicorn
 from fastapi import FastAPI, status
 
-from app.core.database import get_top_brands, get_top_flavors
-from app.core.schemas import BrandResponse, FlavorResponse
-from app.config import Config
+from core.database import get_top_brands, get_top_flavors
+from core.schemas import BrandResponse, FlavorResponse
+from config import Config
 
 from pydantic import BaseModel
 

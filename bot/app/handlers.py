@@ -1,7 +1,6 @@
 from telegram import Update, ReplyKeyboardMarkup, ReplyKeyboardRemove
 from telegram.ext import CommandHandler, MessageHandler, filters, ContextTypes, ConversationHandler
 import aiohttp
-from app.config import Config
 from loguru import logger
 
 API_URL = f"http://localhost"
